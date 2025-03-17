@@ -32,7 +32,7 @@ A Twitch scraper that fetches streamer information based on follower count and g
 
 ## **Setup**  
 1. **Get Your Twitch Client ID and Secret:**  
-   - Go to the **[Twitch Developer Console](https://dev.twitch.tv/console/apps)**.  
+   - Go to the **[Twitch Developer Console]([https://dev.twitch.tv/console/apps])**.  
    - Register a new application.  
    - Set OAuth redirect URL to anything (not needed for this script).  
    - Copy the **Client ID** and **Client Secret**.  
