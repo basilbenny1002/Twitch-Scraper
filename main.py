@@ -54,7 +54,7 @@ for i in tqdm(range(len(streamers)), desc="Getting more info"):
     game_name.append(streamers[i]['game_name'])
     response = scrape_twitch_about(f"https://www.twitch.tv/{streamers[i]['user_name']}/about") #Scraping their twitch about section
     socials = response.get('links', [])
-    mail = response.get('email', [])
+    mail = response.get('emails', [])
     mails_found.update(mail)
     if len(socials) == 0: #checking the absence of any socials
         discord.append("Couldn't find discord")
