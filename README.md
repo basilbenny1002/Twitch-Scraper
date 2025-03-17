@@ -18,7 +18,11 @@ A Twitch scraper that fetches streamer information based on follower count and g
 2. **Install Python dependencies:**  
    ```bash
    pip install -r requirements.txt  
-   ```  
+   ```
+   Additionally install playwright with:
+   ```bash
+   playwright install
+   ```
 3. **Install Node.js and Puppeteer:**  
    - You must install the required Node.js packages before running the scraper.  
    - Run the following command in the root directory:  
