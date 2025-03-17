@@ -27,7 +27,7 @@ A Twitch scraper that fetches streamer information based on follower count and g
    - You must install the required Node.js packages before running the scraper.  
    - Run the following command in the root directory:  
      ```bash
-     npm install puppeteer  
+     npm install 
      ```  
 
 ## **Setup**  
