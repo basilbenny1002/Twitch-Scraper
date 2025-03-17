@@ -1,0 +1,12 @@
+{
+  "name": "twitch-scraper",
+  "version": "1.0.0",
+  "description": "A script to scrape Twitch streamers' about page",
+  "main": "scraper.js",
+  "scripts": {
+    "start": "node scraper.js"
+  },
+  "dependencies": {
+    "puppeteer": "^21.3.8"
+  }
+}
