@@ -71,7 +71,7 @@ for i in tqdm(range(len(streamers)), desc="Getting more info"):
             yt_links.add(social_links)
         if "discord" in str(social_links).lower():
             dc_links.append(social_links)
-        if "x" in i or "twitter" in str(social_links).lower():
+        if "x" in str(social_links).lower() or "twitter" in str(social_links).lower():
             twitter_links.append(social_links)
 
     if len(yt_links) == 0:
