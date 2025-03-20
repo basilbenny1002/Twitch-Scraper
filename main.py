@@ -91,7 +91,7 @@ for i in tqdm(range(len(streamers)), desc="Getting more info"):
     if len(yt_links) > 0:
         mails_found.update(scrape_youtube(yt_links)) #Scraping youtube if present
     if len(mails_found) == 0:
-        gmail.append("Couldn't find a valid gmail")
+        gmail.append("Couldn't find a valid mail")
     else:
         gmail.append(",".join([i for i in set(mails_found)]))
 
