@@ -8,6 +8,7 @@ A Twitch scraper that fetches streamer information based on follower count and g
 ✅ Extracts email addresses.  
 ✅ Filters streamers by **minimum followers** and **game category**.  
 ✅ Outputs results in a CSV file.  
+✅ Verifies the mail address before adding
 
 ## **Installation**  
 1. **Clone the repository:**  
