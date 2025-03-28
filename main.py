@@ -1,5 +1,5 @@
 #necessary imports
-from functions import get_follower_count, scrape_twitch_about, scrape_twitter_profile, extract_emails, scrape_youtube, get_live_streams
+from functions import get_follower_count, scrape_twitch_about, scrape_twitter_profile, extract_emails, scrape_youtube, get_live_streams, is_valid_email
 import pandas as pd
 from tqdm import tqdm
 import logging
@@ -93,7 +93,11 @@ for i in tqdm(range(len(streamers)), desc="Getting more info"):
     if len(mails_found) == 0:
         gmail.append("Couldn't find a valid mail")
     else:
-        gmail.append(",".join([i for i in set(mails_found)]))
+        valid_mails = [i for i in set(mails_found) if is_valid_email(i)] #Filters out the invalid mails
+        if valid_mails:
+            gmail.append(",".join([i for i in set(mails_found) if is_valid_email(i)]))
+        else:
+            gmail.append("Couldn't find a valid mail")
 
 #Output structure
 datas = {"Username": username, "Followers": followers, "Viewer_count": viewer_count, "Language": language,
