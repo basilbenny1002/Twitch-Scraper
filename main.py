@@ -93,7 +93,7 @@ for i in tqdm(range(len(streamers)), desc="Getting more info"):
     if len(mails_found) == 0:
         gmail.append("Couldn't find a valid mail")
     else:
-        valid_mails = [i for i in set(mails_found) if is_valid_email(i)] #Filters out the invalid mails
+        valid_mails = list(filter(is_valid_email, set(mails_found))) #Filters out the invalid mails
         if valid_mails:
             gmail.append(",".join([i for i in set(mails_found) if is_valid_email(i)]))
         else:
