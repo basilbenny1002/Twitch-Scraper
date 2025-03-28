@@ -35,7 +35,7 @@ async function scrapeTwitchAbout(url) {
     const emailsFromHTML = pageHTML.match(emailRegex) || [];
 
     // Merge and remove duplicates
-    const emails = [...new Set([...emailsFromText, ...emailsFromHTML])];
+    const emails = [...new Set([...emailsFromText, ...emailsFromHTML].map(email => email.toLowerCase()))];
 
     await browser.close();
 
