@@ -5,6 +5,8 @@ from playwright.sync_api import sync_playwright
 import re
 import time
 import functools
+from email_validator import validate_email, EmailNotValidError
+
 
 def time_it(func):
     """
@@ -20,6 +22,18 @@ def time_it(func):
         print(f"{func.__name__} executed in {end_time - start_time:.6f} seconds")
         return result
     return wrapper
+
+def is_valid_email(mail_id: str) -> bool:
+    """
+    :param mail_id:
+    :param deliverability_check:
+    :return: bool
+    """
+    try:
+        emailinfo = validate_email(mail_id, check_deliverability=False)
+        return True
+    except EmailNotValidError as e:
+        return False
 @time_it
 def scrape_twitter_profile(twitter_profile_url):
     """
