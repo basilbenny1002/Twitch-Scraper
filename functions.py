@@ -88,14 +88,22 @@ def scrape_twitter_profile(twitter_profile_url):
         }
 
 @time_it
-def extract_emails(text: str):
+def extract_emails(text: str) -> list[str]:
     """
-    Extracts emails form input text
-    :param text:
-    :return: list of found mails:
+    Extract all email addresses from the given text.
+    Returns them in lowercase, excluding obvious image‑file names.
     """
-    email_pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}(?=\s|$)'
-    return [email for email in re.findall(email_pattern, text) if not email.lower().endswith(('.jpg', '.png', '.gif', '.jpeg'))]
+    # Simpler pattern: match word characters, dots, underscores, percent, plus, hyphen,
+    # then '@', then domain chars, then a dot and 2+ letters.
+    email_pattern = r'\b[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}\b'
+
+    # Find all, lowercase them, filter out image filenames
+    raw_emails = re.findall(email_pattern, text)
+    return [
+        email.lower()
+        for email in raw_emails
+        if not email.lower().endswith(('.jpg', '.jpeg', '.png', '.gif'))
+    ]
 
 @time_it
 def get_follower_count(client_id, access_token , user_id=None, user_login=None):
