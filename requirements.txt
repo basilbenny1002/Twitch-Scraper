@@ -1,0 +1,6 @@
+pandas
+tqdm
+python-dotenv
+requests
+playwright
+email-validator
