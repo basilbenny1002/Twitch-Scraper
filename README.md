@@ -60,7 +60,7 @@ A Twitch scraper that fetches streamer information based on follower count and g
    - **Access Token** (`ACCESS_TOKEN`)  
    - **Client ID** (`CLIENT_ID`)  
    - **Minimum Followers** (`MIN_FOLLOWERS`)  
-   - **Game ID** (`GAME_ID`) – [Find Game IDs Here](https://gist.github.com/eneszeren/5926572b7e060fdf11dbcbc424b5a4a8?utm_source=chatgpt.com)
+   - **Game ID** (`GAME_ID`) – [Find Game IDs Here](https://gist.github.com/basilbenny1002/7a0c2096b691048f5de8c100afcbe1a7)
 
 
 ## **Usage**  
